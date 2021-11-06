@@ -46,6 +46,11 @@ class ImagesGalleryFragment : Fragment(), ImageClickListener {
         viewModel.imagesListLiveData.observe(viewLifecycleOwner, {
             binding.recyclerView.adapter = GalleryImagesAdapter(it, this)
         })
+        viewModel.loadImagesLiveData.observe(viewLifecycleOwner, {
+            binding.progressBar.visibility = View.GONE
+            binding.recyclerView.visibility = View.VISIBLE
+
+        })
     }
 
     private fun configureRecyclerView() {

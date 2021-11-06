@@ -2,6 +2,7 @@ package com.fourthwall.android.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fourthwall.android.data.dao.ImageInfoDao
@@ -24,6 +25,8 @@ class ImagesViewModel @Inject constructor(
 
     val imagesListLiveData: LiveData<List<ImageInfo>> = imageInfoDao.all()
 
+    val loadImagesLiveData: MutableLiveData<Boolean> = MutableLiveData()
+
     init {
         loadImages()
     }
@@ -43,9 +46,11 @@ class ImagesViewModel @Inject constructor(
                             imageInfoDao.insert(ImageInfo(imageDto))
                         }
                     }
+                    loadImagesLiveData.postValue(true)
                 }
             } catch (e: Exception) {
                 Log.e("Developer", "Error", e)
+                loadImagesLiveData.postValue(false)
             }
         }
     }
