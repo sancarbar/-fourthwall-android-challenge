@@ -7,7 +7,7 @@
 
   <fragment
     android:id="@+id/ImagesGalleryFragment"
-    android:name="com.fourthwall.android.ImagesGalleryFragment"
+    android:name="com.fourthwall.android.ui.fragment.ImagesGalleryFragment"
     android:label="@string/images_gallery__fragment_label"
     tools:layout="@layout/fragment_images_gallery">
 
@@ -17,7 +17,7 @@
   </fragment>
   <fragment
     android:id="@+id/ImageDetailsFragment"
-    android:name="com.fourthwall.android.ImageDetailsFragment"
+    android:name="com.fourthwall.android.ui.fragment.ImageDetailsFragment"
     android:label="@string/image_details_fragment_label"
     tools:layout="@layout/fragment_images_details">
 

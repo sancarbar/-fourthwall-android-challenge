@@ -1,4 +1,4 @@
-package com.fourthwall.android
+package com.fourthwall.android.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.fourthwall.android.R
 import com.fourthwall.android.databinding.FragmentImagesDetailsBinding
 
 /**

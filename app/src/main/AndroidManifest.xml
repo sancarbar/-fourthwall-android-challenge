@@ -3,6 +3,7 @@
   package="com.fourthwall.android">
 
   <application
+    android:name=".ImagesGalleryApplication"
     android:allowBackup="true"
     android:fullBackupContent="true"
     android:icon="@mipmap/ic_launcher"
@@ -11,7 +12,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.ImagesGallery">
     <activity
-      android:name=".MainActivity"
+      android:name=".ui.activity.MainActivity"
       android:exported="true"
       android:label="@string/app_name"
       android:theme="@style/Theme.ImagesGallery.NoActionBar">

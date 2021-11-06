@@ -1,4 +1,4 @@
-package com.fourthwall.android
+package com.fourthwall.android.ui.activity
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.fourthwall.android.R
 import com.fourthwall.android.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
