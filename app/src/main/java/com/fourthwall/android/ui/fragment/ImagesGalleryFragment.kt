@@ -94,6 +94,7 @@ class ImagesGalleryFragment : Fragment(), ImageClickListener {
     }
 
     override fun onImageClicked(imageInfo: ImageInfo) {
+        viewModel.selectedImageInfo = imageInfo
         findNavController().navigate(R.id.action_ImagesGalleryFragment_to_ImageDetailsFragment)
     }
 }

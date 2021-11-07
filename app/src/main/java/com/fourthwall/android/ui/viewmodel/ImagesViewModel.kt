@@ -27,6 +27,8 @@ class ImagesViewModel @Inject constructor(
 
     val loadImagesLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
+    var selectedImageInfo: ImageInfo? = null
+
     init {
         loadImages()
     }
