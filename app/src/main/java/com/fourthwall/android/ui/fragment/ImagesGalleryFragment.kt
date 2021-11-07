@@ -71,19 +71,14 @@ class ImagesGalleryFragment : Fragment(), ImageClickListener {
         viewModel.imagesListLiveData.observe(viewLifecycleOwner, {
             binding.recyclerView.adapter = GalleryImagesAdapter(it, this)
         })
-        viewModel.loadImagesLiveData.observe(viewLifecycleOwner, { successfull ->
+        viewModel.loadImagesLiveData.observe(viewLifecycleOwner, { successful ->
             binding.progressBar.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
-            if (!successfull) {
+            if (!successful) {
                 MaterialAlertDialogBuilder(requireContext())
-                    .setTitle(R.string.internet_connection_error)
-                    .setMessage(getString(R.string.you_are_not_connected_to_the_internet_please_check_your_connection_and_try_again))
-                    .setPositiveButton(R.string.OK) { dialog, _ ->
-                        run {
-                            dialog.dismiss()
-                            startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS))
-                        }
-                    }
+                    .setTitle(R.string.server_error)
+                    .setMessage(getString(R.string.server_error_message))
+                    .setPositiveButton(R.string.OK) { dialog, _ -> dialog.dismiss() }
                     .show()
             }
         })
