@@ -31,7 +31,7 @@ class ImagesViewModel @Inject constructor(
         loadImages()
     }
 
-    private fun loadImages() {
+    fun loadImages() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = picsumService.getImagesList(null)

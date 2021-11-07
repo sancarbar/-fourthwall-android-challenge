@@ -15,7 +15,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_margin="10dp"
-      android:contentDescription="@string/gallery_image"
+      android:contentDescription="@string/gallery_images"
       tools:src="@mipmap/ic_launcher" />
 
   </androidx.cardview.widget.CardView>

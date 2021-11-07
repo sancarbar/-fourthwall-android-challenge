@@ -6,8 +6,10 @@
   <string name="image_details_fragment_label">Image Details</string>
   <string name="next">Next</string>
   <string name="previous">Previous</string>
-
-  <string name="hello_first_fragment">Hello first fragment</string>
-  <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-  <string name="gallery_image">Gallery Image</string>
+  <string name="gallery_images">Gallery Images</string>
+  <string name="internet_connection_error">Internet connection error</string>
+  <string name="you_are_not_connected_to_the_internet_please_check_your_connection_and_try_again">You are not connected to the Internet. Please check your connection and try again.</string>
+  <string name="server_error">Server error</string>
+  <string name="server_error_message">We are not able to communicate with the server. Please verify your internet connection and try again.</string>
+  <string name="OK" translatable="false">OK</string>
 </resources>
