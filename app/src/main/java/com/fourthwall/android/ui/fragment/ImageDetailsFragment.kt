@@ -50,7 +50,7 @@ class ImageDetailsFragment : Fragment() {
         val bitmapPath = MediaStore.Images.Media.insertImage(
             requireContext().contentResolver,
             bitmap,
-            "Share Image",
+            getString(R.string.share_image),
             ""
         )
         val bitmapUri: Uri = Uri.parse(bitmapPath)

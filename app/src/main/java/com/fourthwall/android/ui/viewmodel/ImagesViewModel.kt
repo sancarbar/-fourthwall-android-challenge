@@ -1,6 +1,5 @@
 package com.fourthwall.android.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +8,7 @@ import com.fourthwall.android.data.dao.ImageInfoDao
 import com.fourthwall.android.data.entity.ImageInfo
 import com.fourthwall.android.network.service.PicsumService
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,6 +20,8 @@ import javax.inject.Inject
 class ImagesViewModel @Inject constructor(
     private val picsumService: PicsumService,
     private val imageInfoDao: ImageInfoDao,
+    private val defaultDispatcher: CoroutineDispatcher
+
 ) : ViewModel() {
 
     val imagesListLiveData: LiveData<List<ImageInfo>> = imageInfoDao.all()
@@ -34,7 +35,7 @@ class ImagesViewModel @Inject constructor(
     }
 
     fun loadImages() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(defaultDispatcher) {
             try {
                 val response = picsumService.getImagesList(null)
                 if (response.isSuccessful) {
@@ -49,9 +50,10 @@ class ImagesViewModel @Inject constructor(
                         }
                     }
                     loadImagesLiveData.postValue(true)
+                } else {
+                    loadImagesLiveData.postValue(false)
                 }
             } catch (e: Exception) {
-                Log.e("Developer", "Error", e)
                 loadImagesLiveData.postValue(false)
             }
         }

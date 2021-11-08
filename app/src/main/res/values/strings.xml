@@ -13,4 +13,5 @@
   <string name="server_error_message">We are not able to communicate with the server. Please verify your internet connection and try again.</string>
   <string name="OK" translatable="false">OK</string>
   <string name="share">Share</string>
+  <string name="share_image">Share Image</string>
 </resources>
