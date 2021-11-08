@@ -8,4 +8,5 @@ This project was built using the MVVM architecture principles with the following
 * Hilt
 * ViewModel + LiveData
 * Room
+* Unit Test for the Main ViewModel used considering coroutines.
 
